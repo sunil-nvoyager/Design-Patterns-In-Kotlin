@@ -1,14 +1,18 @@
 import org.junit.jupiter.api.Test
 
 interface CoffeeMachine {
+    
     fun makeSmallCoffee()
     fun makeLargeCoffee()
+    
 }
 
 class NormalCoffeeMachine : CoffeeMachine {
+    
     override fun makeSmallCoffee() = println("Normal: Making small coffee")
 
     override fun makeLargeCoffee() = println("Normal: Making large coffee")
+    
 }
 
 //Decorator:
@@ -29,6 +33,7 @@ class EnhancedCoffeeMachine(private val coffeeMachine: CoffeeMachine) : CoffeeMa
     private fun addMilk() {
         println("Enhanced: Adding milk")
     }
+    
 }
 
 class DecoratorTest {
@@ -44,5 +49,7 @@ class DecoratorTest {
         enhancedMachine.makeLargeCoffee()
         // extended behaviour
         enhancedMachine.makeCoffeeWithMilk()
+        
     }
+    
 }
