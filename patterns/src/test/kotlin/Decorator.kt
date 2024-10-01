@@ -1,7 +1,39 @@
 import org.junit.jupiter.api.Test
 
 interface CoffeeMachine {
-    fun makeSmallCoffee()
+    /**
+     * This method is responsible for making a small coffee.
+     * It prints a message indicating that a small coffee is being made.
+     *
+     * @throws IllegalStateException if the coffee machine is not ready to make coffee.
+     *
+     * Example usage:
+     * ```
+     * val coffeeMachine = CoffeeMachine()
+     * if (coffeeMachine.isReady()) {
+     *     coffeeMachine.makeSmallCoffee()
+     * } else {
+     *     throw IllegalStateException("Coffee machine is not ready.")
+     * }
+     * ```
+     */
+    /**
+     * Overrides the default behavior to make a large coffee.
+     * This method provides an enhanced implementation that outputs a message
+     * indicating that a large coffee is being made.
+     *
+     * @throws IllegalStateException if the coffee machine is not ready to make coffee.
+     *
+     * Example usage:
+     * ```
+     * val coffeeMaker = CoffeeMaker()
+     * try {
+     *     coffeeMaker.makeLargeCoffee()
+     * } catch (e: IllegalStateException) {
+     *     println("Error: ${e.message}")
+     * }
+     * ```
+     */
     fun makeLargeCoffee()
 }
 
