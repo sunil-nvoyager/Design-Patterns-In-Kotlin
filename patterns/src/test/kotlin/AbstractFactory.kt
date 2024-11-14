@@ -14,6 +14,7 @@ abstract class PlantFactory {
     abstract fun makePlant(): Plant
 
     companion object {
+        
         inline fun <reified T : Plant> createFactory(): PlantFactory =
             when (T::class) {
                 OrangePlant::class -> OrangeFactory()
@@ -24,10 +25,12 @@ abstract class PlantFactory {
 }
 
 class AppleFactory : PlantFactory() {
+    
     override fun makePlant(): Plant = ApplePlant()
 }
 
 class OrangeFactory : PlantFactory() {
+    
     override fun makePlant(): Plant = OrangePlant()
 }
 
@@ -36,6 +39,7 @@ class AbstractFactoryTest {
 
     @Test
     fun `Abstract Factory`() {
+        
         val plantFactory = PlantFactory.createFactory<OrangePlant>()
         val plant = plantFactory.makePlant()
         println("Created plant: $plant")
