@@ -71,6 +71,38 @@ class SecuredFile(private val normalFile: File) : File {
      * ```
      */
 class ProtectionProxyTest {
+    /**
+     * This test method demonstrates the use of a Protection Proxy pattern.
+     * It creates a secured file that wraps a normal file and manages access
+     * based on a password.
+     *
+     * The method performs the following actions:
+     * 1. Reads a file without a password.
+     * 2. Sets a password for the secured file.
+     * 3. Reads the file again, this time requiring the password.
+     *
+     * @throws SecurityException if an attempt is made to read the file without
+     *         providing the correct password.
+     * @throws IOException if there is an error reading the file.
+     *
+     * Example usage:
+     * ```
+     * @Test
+     * fun testProtectionProxy() {
+     *     val securedFile = SecuredFile(NormalFile())
+     *     with(securedFile) {
+     *         // Reading without password
+     *         read("readme.md") // Should succeed
+     *
+     *         // Setting password
+     *         password = "secret"
+     *
+     *         // Reading with password
+     *         read("readme.md") // Should succeed if the password is correct
+     *     }
+     * }
+     * ```
+     */
     @Test
     fun `Protection Proxy`() {
         val securedFile = SecuredFile(NormalFile())
