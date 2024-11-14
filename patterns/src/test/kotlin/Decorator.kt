@@ -96,39 +96,6 @@ class EnhancedCoffeeMachine(private val coffeeMachine: CoffeeMachine) : CoffeeMa
      * ```
      */
 class DecoratorTest {
-    /**
-     * Tests the functionality of the Decorator pattern by creating an instance of
-     * a normal coffee machine and wrapping it with an enhanced coffee machine.
-     *
-     * This method demonstrates the use of decorators to extend the behavior of
-     * the coffee machine without modifying its original implementation.
-     *
-     * The following behaviors are tested:
-     * - Non-overridden behavior: `makeSmallCoffee()` from the normal coffee machine.
-     * - Overridden behavior: `makeLargeCoffee()` from the enhanced coffee machine.
-     * - Extended behavior: `makeCoffeeWithMilk()` from the enhanced coffee machine.
-     *
-     * @throws IllegalArgumentException if the coffee size is invalid.
-     * @throws UnsupportedOperationException if the requested operation is not supported by the machine.
-     *
-     * Example usage:
-     * ```
-     * @Test
-     * fun testCoffeeMachineDecorator() {
-     *     val normalMachine = NormalCoffeeMachine()
-     *     val enhancedMachine = EnhancedCoffeeMachine(normalMachine)
-     *
-     *     // Test non-overridden behavior
-     *     enhancedMachine.makeSmallCoffee() // Should make a small coffee
-     *
-     *     // Test overridden behavior
-     *     enhancedMachine.makeLargeCoffee() // Should make a large coffee with enhanced features
-     *
-     *     // Test extended behavior
-     *     enhancedMachine.makeCoffeeWithMilk() // Should make coffee with milk
-     * }
-     * ```
-     */
     @Test
     fun Decorator() {
         val normalMachine = NormalCoffeeMachine()
