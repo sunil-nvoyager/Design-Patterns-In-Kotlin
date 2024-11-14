@@ -27,6 +27,33 @@ object CurrencyFactory {
 
 class FactoryMethodTest {
 
+    /**
+     * Tests the functionality of the CurrencyFactory to retrieve currency codes
+     * based on country instances.
+     *
+     * This method verifies that the correct currency codes are returned for
+     * Greece and the USA. It uses the CurrencyFactory to obtain the currency
+     * for each specified country and asserts that the returned values match
+     * the expected currency codes.
+     *
+     * @throws IllegalArgumentException if the country provided does not have
+     *                                  a corresponding currency.
+     *
+     * Example usage:
+     * ```
+     * @Test
+     * fun testCurrencyFactory() {
+     *     val greeceCurrency = CurrencyFactory.currencyForCountry(Greece("")).code
+     *     println("Greece currency: $greeceCurrency") // Expected output: Greece currency: EUR
+     *
+     *     val usaCurrency = CurrencyFactory.currencyForCountry(Country.USA).code
+     *     println("USA currency: $usaCurrency") // Expected output: USA currency: USD
+     *
+     *     assertThat(greeceCurrency).isEqualTo("EUR")
+     *     assertThat(usaCurrency).isEqualTo("USD")
+     * }
+     * ```
+     */
     @Test
     fun FactoryMethod() {
         val greeceCurrency = CurrencyFactory.currencyForCountry(Greece("")).code
