@@ -28,6 +28,9 @@ class FahrenheitTemperature(private var celsiusTemperature: CelsiusTemperature) 
 
 class AdapterTest {
 
+    /**
+     * Tests conversion between Celsius and Fahrenheit temperatures.
+     */
     @Test
     fun Adapter() {
         
