@@ -30,6 +30,7 @@ class AdapterTest {
 
     @Test
     fun Adapter() {
+        
         val celsiusTemperature = CelsiusTemperature(0.0)
         val fahrenheitTemperature = FahrenheitTemperature(celsiusTemperature)
 
